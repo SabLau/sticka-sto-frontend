@@ -1,0 +1,15 @@
+@media all and (min-width: 480px) {
+  .signUp-container {
+    padding: 60px 0;
+    display: block;
+    text-align: left;
+  }
+
+  .signUp-container form {
+    margin: 0 auto;
+    max-width: 512px;
+  }
+  .pass-error{
+    color: red;
+  }
+}

@@ -1,0 +1,30 @@
+.bgColor {
+  background: #fdb195;
+  border-color: #f39d7c;
+  color: #fff;
+  text-shadow: 1px 1px #ec5215;
+  outline: none;
+}
+
+.bgColor:hover {
+  background-color: #f39d7c;
+  border-color: #f39d7c;
+}
+
+.btn-primary:focus {
+  background-color: #fdb195 !important;
+  border-color: #f39d7c !important;
+  box-shadow: none;
+}
+
+.btn-primary:active {
+  background-color: #ec5215 !important;
+  border-color: #ec5215 !important;
+  transform: translate(0, 0.2rem);
+  box-shadow: none !important;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+}

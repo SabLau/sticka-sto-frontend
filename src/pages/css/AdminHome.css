@@ -1,0 +1,17 @@
+.list-container {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  padding: 3% 10%;
+  max-width: 2000px;
+  margin: 10px auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: left 
+}

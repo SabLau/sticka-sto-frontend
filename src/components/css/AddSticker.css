@@ -1,0 +1,22 @@
+.form-container {
+  padding: 3% 20%;
+  justify-content: center;
+  font-family: Segoe UI;
+  font-weight: bold;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px #e4e6eb;
+  padding: 1px;
+}
+
+input {
+  margin: 1%;
+}
+
+.submit-btn {
+  width: 5%;
+  height: 1%;
+  margin: 1% 46%;
+}
