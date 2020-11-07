@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../css/index.css';
 import './css/AddSticker.css';
 
-const BACKEND_SERVER = 'http://127.0.0.1:5000/';
+const BACKEND_SERVER = 'https://sticka-sto-backend.herokuapp.com/';
 
 class AddItem extends Component {
   constructor(props) {

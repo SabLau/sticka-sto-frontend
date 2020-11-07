@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { isLogged, isAdmin } from '../actions/index.js';
 import { Redirect } from 'react-router';
 
-const BACKEND_SERVER = 'http://127.0.0.1:5000/';
+const BACKEND_SERVER = 'https://sticka-sto-backend.herokuapp.com/';
 
 
 export default function AdminLogin() {

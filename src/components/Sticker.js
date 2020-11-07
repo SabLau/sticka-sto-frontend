@@ -7,7 +7,7 @@ import EditModal from '../components/EditModal';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 
-const BACKEND_SERVER = 'http://127.0.0.1:5000/';
+const BACKEND_SERVER = 'https://sticka-sto-backend.herokuapp.com/';
 
 function Sticker (props){
   //user state

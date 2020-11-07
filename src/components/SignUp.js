@@ -11,7 +11,7 @@ import './css/SignUp.css';
 import axios from 'axios';
 import { Redirect } from 'react-router';
 
-const BACKEND_SERVER = 'http://127.0.0.1:5000/';
+const BACKEND_SERVER = 'https://sticka-sto-backend.herokuapp.com/';
 
 function SignUp() {
   //if form successfully submitted, redirect is true
