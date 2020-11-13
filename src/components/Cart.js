@@ -6,6 +6,7 @@ import './css/Sticker.css';
 import EditModal from '../components/EditModal';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
+import { addCartItems, removeCartItems, updateCartItems } from '../actions/index.js';
 
 const BACKEND_SERVER = 'https://sticka-sto-backend.herokuapp.com/';
 
@@ -14,33 +15,33 @@ function Cart (){
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart)
 
-    var stickerID = 1
+    var stickerID = Math.random()*(10) + 1
     var stickerQty = 2
     var stickerUpdate = 10
     const addToCart = () => {
-/*         dispatch(
+        dispatch(
             addCartItems (
                 stickerID,
                 stickerQty
             )
-        ); */
+        );
     }
 
     const removeFromCart = () => {
-/*         dispatch(
+         dispatch(
             removeCartItems (
                 stickerID 
             )
-        ); */
+        ); 
     }
 
     const updateItemQty = () => {
-/*         dispatch(
+         dispatch(
             updateCartItems(
                 stickerID,
                 stickerUpdate
             )
-        ); */
+        );
     }
 
 return (
@@ -64,6 +65,7 @@ return (
                 Subtotal (# items): stickerprice
             </h5>
             <button className="checkout-btn" onClick={removeFromCart}></button>
+            {console.log(cart)}
         </aside>
     </div>
 );

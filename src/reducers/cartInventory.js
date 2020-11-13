@@ -1,8 +1,8 @@
 const initialState = {
     cart: [
         {
-            id: '',
-            qty: ''
+            id: ' ',
+            qty: ' '
         }
     ]
 }
@@ -20,12 +20,13 @@ const cartReducer = (state=initialState, action) => {
                 ...state, 
                 cart: index1
             };
-
         case 'UPDATE_STICKER':
             const index2 = Object.filter(id=>id !== action.id)
             const newList = [...state.cart]
             newList[index2].qty = action.qty
             return {...state, cart:newList};
+        default:
+            return state;
     }
 };
 export default cartReducer;
