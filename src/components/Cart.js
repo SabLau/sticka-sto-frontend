@@ -6,7 +6,7 @@ import './css/Sticker.css';
 import EditModal from '../components/EditModal';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
-import { addCartItems, removeCartItems, updateCartItems } from '../actions/index.js';
+import { addCartItems, removeCartItems, updateCartItems, resetCartItems } from '../actions/index.js';
 
 const BACKEND_SERVER = 'https://sticka-sto-backend.herokuapp.com/';
 
@@ -14,8 +14,8 @@ function Cart (){
 
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart)
-
-    var stickerID = Math.random()*(10) + 1
+    var removeID = 10
+    var stickerID = Math.round(Math.random()*(10) + 1)
     var stickerQty = 2
     var stickerUpdate = 10
     const addToCart = () => {
@@ -29,9 +29,7 @@ function Cart (){
 
     const removeFromCart = () => {
          dispatch(
-            removeCartItems (
-                stickerID 
-            )
+            removeCartItems (removeID)
         ); 
     }
 
@@ -41,6 +39,11 @@ function Cart (){
                 stickerID,
                 stickerUpdate
             )
+        );
+    }
+    const resetCart = () => {
+        dispatch(
+            resetCartItems()
         );
     }
 
@@ -65,6 +68,8 @@ return (
                 Subtotal (# items): stickerprice
             </h5>
             <button className="checkout-btn" onClick={removeFromCart}></button>
+            <button onClick={resetCart}>reset cart</button>
+            
             {console.log(cart)}
         </aside>
     </div>
