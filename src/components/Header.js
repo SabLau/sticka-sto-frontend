@@ -50,6 +50,9 @@ function Header() {
           </div>
           
       }
+      <div>
+        <button class="cart-btn"><Link to="/cart">Cart</Link></button>
+      </div>
 
     </header>
   );
