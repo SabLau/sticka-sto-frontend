@@ -15,7 +15,7 @@ function Cart (){
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart)
     var removeID = 10
-    var stickerID = Math.round(Math.random()*(10) + 1)
+    var stickerID = 10
     var stickerQty = 2
     var stickerUpdate = 10
     const addToCart = () => {
