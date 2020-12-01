@@ -15,7 +15,7 @@ function Cart (){
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart)
     var removeID = 10
-    var stickerID = 10
+    var stickerID = 11
     var stickerQty = 2
     var stickerUpdate = 10
     const addToCart = () => {
@@ -60,14 +60,14 @@ return (
                 <img src="#" alt="#"/>
                 <h5>Name of Sticker</h5>
                 <p>Qty</p>
-                <button className="remove-item-btn">remove</button>
+                <button className="remove-item-btn" onClick={removeFromCart}>remove</button>
             </section>
         </section>
         <aside className="cart-summary">
             <h5 className="cat-subtotal">
                 Subtotal (# items): stickerprice
             </h5>
-            <button className="checkout-btn" onClick={removeFromCart}></button>
+            <button className="checkout-btn">checkout</button>
             <button onClick={resetCart}>reset cart</button>
             
             {console.log(cart)}

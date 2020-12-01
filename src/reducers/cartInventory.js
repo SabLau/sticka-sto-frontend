@@ -3,19 +3,20 @@ const initialState = {
     ]
 }
 
-const cartReducer = (state=initialState, action) => {
+const cartReducer = (state=initialState, action={}) => {
     switch(action.type){
         case 'RESET_CART':
             return {
                 cart: []
             }
         case 'ADD_STICKER':
-            return {...state, 
-                cart: [...state.cart, action.payload]
-            };
+            return Object.assign({}, state, {
+                id: action.id,
+                qty: action.qty
+            })
         case 'REMOVE_STICKER':
             console.log("remove sticker case")
-            return state.filter(id => id !== action.payload.id);
+            return {cart: state.cart.filter(cart => cart.id !== action.id)};
         case 'UPDATE_STICKER':
             const index2 = state.cart.filter(id=>id !== action.id)
             const newList = [...state.cart]

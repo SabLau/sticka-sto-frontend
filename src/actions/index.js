@@ -25,19 +25,16 @@ export const isLogged = (id, name, email) => {
 export const addCartItems = (stickerID, stickerQty) => {
     return {
         type: 'ADD_STICKER',
-        payload: {
-            id: stickerID,
-            qty: stickerQty
-        }
+        id: stickerID,
+        qty: stickerQty
     };
 };
 
 export const removeCartItems = (stickerID) => {
     return {
         type: 'REMOVE_STICKER',
-        payload: {
-            id: stickerID
-        }
+        id: stickerID
+        
     };
 };
 
@@ -45,10 +42,8 @@ export const removeCartItems = (stickerID) => {
 export const updateCartItems = (stickerID, stickerQty) => {
     return {
         type: 'UPDATE_STICKER',
-        payload: {
-            id: stickerID,
-            qty: stickerQty
-        }
+        id: stickerID,
+        qty: stickerQty
     };
 };
 
