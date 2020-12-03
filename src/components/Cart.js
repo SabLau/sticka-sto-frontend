@@ -14,10 +14,10 @@ function Cart (){
 
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart)
-    var removeID = 10
+    var removeID = 11
     var stickerID = 11
     var stickerQty = 2
-    var stickerUpdate = 10
+    var stickerUpdate = 11
     const addToCart = () => {
         dispatch(
             addCartItems (

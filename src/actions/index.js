@@ -25,8 +25,10 @@ export const isLogged = (id, name, email) => {
 export const addCartItems = (stickerID, stickerQty) => {
     return {
         type: 'ADD_STICKER',
-        id: stickerID,
-        qty: stickerQty
+        payload: {
+            id: stickerID,
+            qty: stickerQty
+        }
     };
 };
 
