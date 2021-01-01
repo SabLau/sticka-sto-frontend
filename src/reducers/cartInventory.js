@@ -7,8 +7,10 @@ const cartReducer = (state={cart:[]}, action={}) => {
             return Object.assign({}, state, {cart:[...state.cart, action.payload
             ]})
         case 'REMOVE_STICKER':
-            console.log("remove sticker case")
-            return {cart: state.cart.filter(cart=>cart.id !==action.payload.id)}
+            //filter creates a new array of objects that fit the criteria in its parameters
+            const newCart = state.cart.filter(cart=>cart.id!=action.id);
+            //assigns new array to replace the previous one in state
+            return {cart: newCart};
         case 'UPDATE_STICKER':
             const index2 = state.cart.filter(id=>id !== action.id)
             const newList = [...state.cart]
