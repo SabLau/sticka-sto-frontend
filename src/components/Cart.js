@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from 'react';
 import PropTypes from 'prop-types';
 import editIcon from '../imgs/edit-icon.png';
 import '../css/index.css';
@@ -10,69 +10,80 @@ import { addCartItems, removeCartItems, updateCartItems, resetCartItems } from '
 
 const BACKEND_SERVER = 'https://sticka-sto-backend.herokuapp.com/';
 
-function Cart (){
+class Cart extends Component {
 
-    const dispatch = useDispatch();
-    const cart = useSelector(state => state.cart)
-    var removeID = 11
-    var stickerID = 11
-    var stickerQty = 2
-    var stickerUpdate = 11
-    const addToCart = () => {
-        dispatch(
-            addCartItems (
-                stickerID,
-                stickerQty
-            )
-        );
+    componentDidMount() {
+        //make sure fetch stickers gets called upon page initialization
+        this.fetchStickers();
     }
 
-    const removeFromCart = () => {
-         dispatch(
-            removeCartItems (removeID)
-        ); 
+    fetchStickers = async () =>{
+        //grab stickers of based on id from redux store
     }
 
-    const updateItemQty = () => {
-         dispatch(
-            updateCartItems(
-                stickerID,
-                stickerUpdate
-            )
-        );
-    }
-    const resetCart = () => {
-        dispatch(
-            resetCartItems()
-        );
-    }
+    render(){
+        const dispatch = useDispatch();
+        const cart = useSelector(state => state.cart)
+        var removeID = 11
+        var stickerID = 11
+        var stickerQty = 2
+        var stickerUpdate = 11
+        const addToCart = () => {
+            dispatch(
+                addCartItems (
+                    stickerID,
+                    stickerQty
+                )
+            );
+        }
 
-return (
-    <div className="container">
-        <div>
-            <h1>testing adding inventory</h1>
-            <button onClick={addToCart}>Add Item</button>
-        </div>
+        const removeFromCart = () => {
+            dispatch(
+                removeCartItems (removeID)
+            ); 
+        }
 
-        <section className="cart-inventory">
-            <h5 className="cart-items">Shopping Cart</h5>
-            <section className="sticker">
-                <img src="#" alt="#"/>
-                <h5>Name of Sticker</h5>
-                <p>Qty</p>
-                <button className="remove-item-btn" onClick={removeFromCart}>remove</button>
+        const updateItemQty = () => {
+            dispatch(
+                updateCartItems(
+                    stickerID,
+                    stickerUpdate
+                )
+            );
+        }
+        const resetCart = () => {
+            dispatch(
+                resetCartItems()
+            );
+        }
+
+    return (
+        <div className="container">
+            <div>
+                <h1>testing adding inventory</h1>
+                <button onClick={addToCart}>Add Item</button>
+            </div>
+
+            <section className="cart-inventory">
+                <h5 className="cart-items">Shopping Cart</h5>
+                <section className="sticker">
+                    <img src="#" alt="#"/>
+                    <h5>Name of Sticker</h5>
+                    <p>Qty</p>
+                    <button className="remove-item-btn" onClick={removeFromCart}>remove</button>
+                </section>
             </section>
-        </section>
-        <aside className="cart-summary">
-            <h5 className="cat-subtotal">
-                Subtotal (# items): stickerprice
-            </h5>
-            <button className="checkout-btn">checkout</button>
-            <button onClick={resetCart}>reset cart</button>
-            
-            {console.log(cart)}
-        </aside>
-    </div>
-);
+            <aside className="cart-summary">
+                <h5 className="cat-subtotal">
+                    Subtotal (# items): stickerprice
+                </h5>
+                <button className="checkout-btn">checkout</button>
+                <button onClick={resetCart}>reset cart</button>
+                
+                {console.log(cart)}
+            </aside>
+        </div>
+    );
 
+    }
 } export default Cart;

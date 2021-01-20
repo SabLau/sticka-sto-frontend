@@ -5,7 +5,8 @@ import AdminHome from './pages/AdminHome.js';
 import AddSticker from './components/AddSticker.js';
 import AdminLoginPage from './pages/AdminLoginPage.js';
 import UserSignUpPage from './pages/UserSignUpPage.js';
-import Cart from './components/Cart.js'
+import Cart from './components/Cart.js';
+import CartItem from './components/CartItem.js';
 import { Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/maplestoryLogin" component={AdminLoginPage} />
         <Route path="/signUp" component={UserSignUpPage} />
         <Route path="/cart" component={Cart} />
+        <Route path="/cart-item" component={CartItem} />
       </Switch>
     </div>
   );
