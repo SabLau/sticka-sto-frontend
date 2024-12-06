@@ -5,13 +5,15 @@ import '../css/index.css';
 import './css/Sticker.css';
 import EditModal from '../components/EditModal';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import {addCartItems} from '../actions/index.js'
 
 const BACKEND_SERVER = 'https://sticka-sto-backend.herokuapp.com/';
 
 function Sticker (props){
   //user state
-    const isAdmin = useSelector(state => state.isAdmin)
+    const isAdmin = useSelector(state => state.isAdmin);
+    const dispatch = useDispatch();
     console.log(isAdmin);
     //hooks
     const [id, setId] = useState('');
@@ -23,6 +25,14 @@ function Sticker (props){
     const [isShowing, setIsShowing] = useState(false);
     const [stickerData, setStickerData] = useState([]);
 
+    const addToCart = (stickerID, stickerQty) => {
+      dispatch(
+          addCartItems (
+              stickerID,
+              1
+          )
+      );
+  }
 
     const showEditModal = () => {
         setIsShowing(true);
@@ -112,6 +122,7 @@ function Sticker (props){
             <p>Name: {props.sticker.sticker_name}</p>
             <p> Price: ${props.sticker.sticker_price}</p>
             <p>{props.sticker.sticker_description}</p>
+            <button onClick={addToCart(props.sticker.sticker_id)}>+</button>
             {isAdmin ? (
               <p> Qty: {props.sticker.quantity}</p>
               ) : null

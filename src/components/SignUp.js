@@ -31,7 +31,7 @@ function SignUp() {
   const [zipcode, setZipcode] = useState('');
 
   function passwordValidation(){
-    if (password != confirmPassword){
+    if (password !== confirmPassword){
       setPassError(true);
     }else{
       setPassError(false);

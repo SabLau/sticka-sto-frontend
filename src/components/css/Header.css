@@ -104,3 +104,10 @@ header .sign-up-btn{
   bottom: 15%;
   margin: 0 2%;
 }
+
+header .cart-btn {
+  position: absolute; 
+  right: 5%;
+  bottom: 15%;
+  margin: 0 2%;
+}
